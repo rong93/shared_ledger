@@ -1,0 +1,27 @@
+services:
+  # 定義第一台機器
+  client1:
+    build: .               # 使用目前資料夾的 Dockerfile 建立環境
+    container_name: client-1
+    volumes:
+      - .:/app             # 同步你的 Python 程式碼
+      - ./storage:/share   # 【關鍵】這是三台機器共用的「帳本空間」
+    tty: true              # 讓容器保持啟動，不要自動關閉
+
+  # 定義第二台機器
+  client2:
+    build: .
+    container_name: client-2
+    volumes:
+      - .:/app
+      - ./storage:/share   # 指向同一個實體資料夾
+    tty: true
+
+  # 定義第三台機器
+  client3:
+    build: .
+    container_name: client-3
+    volumes:
+      - .:/app
+      - ./storage:/share   # 指向同一個實體資料夾
+    tty: true

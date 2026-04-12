@@ -1,0 +1,12 @@
+# 1. 使用官方 Python 輕量版作為基礎
+FROM python:3.9-slim
+
+# 2. 設定容器內的工作目錄，之後你的程式碼會出現在這裡
+WORKDIR /app
+
+# 3. 預先建立好共享帳本的掛載點
+RUN mkdir -p /share
+
+# 4. 因為你還沒寫好執行檔，我們先讓容器啟動後「空轉」
+# 這樣容器才不會因為沒事做就自動關閉（Exited）
+CMD ["tail", "-f", "/dev/null"]
