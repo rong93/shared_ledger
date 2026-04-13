@@ -72,6 +72,7 @@ def process_transaction(sender, receiver, amount):
     # 檢查寄件人錢夠不夠
     if balances[sender] < amount:
         print(f"轉帳失敗: {sender} 餘額不足 (目前餘額: {balances[sender]})")
+        update_balances(balances)
         return False
 
     # 更新金額

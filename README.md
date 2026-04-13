@@ -160,6 +160,9 @@ docker run image → 才會生出 一個 容器
 ### 容器啟動
 
 啟動多個容器
+```bash
+sudo -s
+```
 
 ```bash
 docker compose up -d --build
