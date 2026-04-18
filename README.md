@@ -124,7 +124,7 @@ cd shared_ledger
 1. 進入到 容器 終端機 的 執行指令的方法:
 
 ```bash
-docker exec -it client-1 sh
+docker exec -it client-1 bash
 ```
 
 這會讓你進入到 client-1，就像是進入到 這台電腦的中端機 可以打指令來操作它。
